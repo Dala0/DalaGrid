@@ -1623,6 +1623,679 @@
 		
 		}
 		
+		if ($_REQUEST['crosses'] == 'one') {
+
+
+			// Cross drawing one colour
+			
+			$linevar = 1;
+			$nublines = rand(3,16);
+			
+			while ($linevar <= $nublines) {
+				$red = rand($r11, $r21);
+				$green = rand($r31, $r41);
+				$blue = rand($r51, $r61);
+				$linesize = rand(3,6);
+				$startline = rand(1,12);
+				$startlinex = rand(1,16);
+				$grid[$startline][$startlinex][1] = $red;
+				$grid[$startline][$startlinex][2] = $green;
+				$grid[$startline][$startlinex][3] = $blue;
+				$grid[$startline+1][$startlinex][1] = $red;
+				$grid[$startline+1][$startlinex][2] = $green;
+				$grid[$startline+1][$startlinex][3] = $blue;
+				$grid[$startline-1][$startlinex][1] = $red;
+				$grid[$startline-1][$startlinex][2] = $green;
+				$grid[$startline-1][$startlinex][3] = $blue;
+				if ($linesize > 3) {
+					$grid[$startline+2][$startlinex][1] = $red;
+					$grid[$startline+2][$startlinex][2] = $green;
+					$grid[$startline+2][$startlinex][3] = $blue;
+					$grid[$startline-2][$startlinex][1] = $red;
+					$grid[$startline-2][$startlinex][2] = $green;
+					$grid[$startline-2][$startlinex][3] = $blue;
+				}
+				if ($linesize > 4) {
+					$grid[$startline+3][$startlinex][1] = $red;
+					$grid[$startline+3][$startlinex][2] = $green;
+					$grid[$startline+3][$startlinex][3] = $blue;
+					$grid[$startline-3][$startlinex][1] = $red;
+					$grid[$startline-3][$startlinex][2] = $green;
+					$grid[$startline-3][$startlinex][3] = $blue;
+				}
+				if ($linesize > 5) {
+					$grid[$startline+4][$startlinex][1] = $red;
+					$grid[$startline+4][$startlinex][2] = $green;
+					$grid[$startline+4][$startlinex][3] = $blue;
+					$grid[$startline-4][$startlinex][1] = $red;
+					$grid[$startline-4][$startlinex][2] = $green;
+					$grid[$startline-4][$startlinex][3] = $blue;
+				}
+				$grid[$startline][$startlinex+1][1] = $red;
+				$grid[$startline][$startlinex+1][2] = $green;
+				$grid[$startline][$startlinex+1][3] = $blue;
+				$grid[$startline][$startlinex-1][1] = $red;
+				$grid[$startline][$startlinex-1][2] = $green;
+				$grid[$startline][$startlinex-1][3] = $blue;
+				if ($linesize > 3) {
+					$grid[$startline][$startlinex+2][1] = $red;
+					$grid[$startline][$startlinex+2][2] = $green;
+					$grid[$startline][$startlinex+2][3] = $blue;
+					$grid[$startline][$startlinex-2][1] = $red;
+					$grid[$startline][$startlinex-2][2] = $green;
+					$grid[$startline][$startlinex-2][3] = $blue;
+				}
+				if ($linesize > 4) {
+					$grid[$startline][$startlinex+3][1] = $red;
+					$grid[$startline][$startlinex+3][2] = $green;
+					$grid[$startline][$startlinex+3][3] = $blue;
+					$grid[$startline][$startlinex-3][1] = $red;
+					$grid[$startline][$startlinex-3][2] = $green;
+					$grid[$startline][$startlinex-3][3] = $blue;
+				}
+				if ($linesize > 5) {
+					$grid[$startline][$startlinex+4][1] = $red;
+					$grid[$startline][$startlinex+4][2] = $green;
+					$grid[$startline][$startlinex+4][3] = $blue;
+					$grid[$startline][$startlinex-4][1] = $red;
+					$grid[$startline][$startlinex-4][2] = $green;
+					$grid[$startline][$startlinex-4][3] = $blue;
+				}
+				$linevar++;
+			
+			}
+			
+		} else if ($_REQUEST['crosses'] == 'random') {
+		
+		
+			// Cross drawing random colours
+			
+			$linevar = 1;
+			$nublines = rand(3,16);
+			
+			while ($linevar <= $nublines) {
+				$num = rand(1, 8);
+				if ($num == 1) {
+					$red = rand($r11, $r21);
+					$green = rand($r31, $r41);
+					$blue = rand($r51, $r61);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+				}
+				else if ($num == 2) {
+					$red = rand($r12, $r22);
+					$green = rand($r32, $r42);
+					$blue = rand($r52, $r62);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else if ($num == 3) {
+					$red = rand($r13, $r23);
+					$green = rand($r33, $r43);
+					$blue = rand($r53, $r63);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else if ($num == 4) {
+					$red = rand($r14, $r24);
+					$green = rand($r34, $r44);
+					$blue = rand($r54, $r64);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else if ($num == 5) {
+					$red = rand($r15, $r25);
+					$green = rand($r35, $r45);
+					$blue = rand($r55, $r65);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else if ($num == 6) {
+					$red = rand($r16, $r26);
+					$green = rand($r36, $r46);
+					$blue = rand($r56, $r66);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else if ($num == 7) {
+					$red = rand($r17, $r27);
+					$green = rand($r37, $r47);
+					$blue = rand($r57, $r67);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				else {
+					$red = rand($r18, $r28);
+					$green = rand($r38, $r48);
+					$blue = rand($r58, $r68);
+					$linesize = rand(3,6);
+					$startline = rand(1,12);
+					$startlinex = rand(1,16);
+					$grid[$startline][$startlinex][1] = $red;
+					$grid[$startline][$startlinex][2] = $green;
+					$grid[$startline][$startlinex][3] = $blue;
+					$grid[$startline+1][$startlinex][1] = $red;
+					$grid[$startline+1][$startlinex][2] = $green;
+					$grid[$startline+1][$startlinex][3] = $blue;
+					$grid[$startline-1][$startlinex][1] = $red;
+					$grid[$startline-1][$startlinex][2] = $green;
+					$grid[$startline-1][$startlinex][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline+2][$startlinex][1] = $red;
+						$grid[$startline+2][$startlinex][2] = $green;
+						$grid[$startline+2][$startlinex][3] = $blue;
+						$grid[$startline-2][$startlinex][1] = $red;
+						$grid[$startline-2][$startlinex][2] = $green;
+						$grid[$startline-2][$startlinex][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline+3][$startlinex][1] = $red;
+						$grid[$startline+3][$startlinex][2] = $green;
+						$grid[$startline+3][$startlinex][3] = $blue;
+						$grid[$startline-3][$startlinex][1] = $red;
+						$grid[$startline-3][$startlinex][2] = $green;
+						$grid[$startline-3][$startlinex][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline+4][$startlinex][1] = $red;
+						$grid[$startline+4][$startlinex][2] = $green;
+						$grid[$startline+4][$startlinex][3] = $blue;
+						$grid[$startline-4][$startlinex][1] = $red;
+						$grid[$startline-4][$startlinex][2] = $green;
+						$grid[$startline-4][$startlinex][3] = $blue;
+					}
+					$grid[$startline][$startlinex+1][1] = $red;
+					$grid[$startline][$startlinex+1][2] = $green;
+					$grid[$startline][$startlinex+1][3] = $blue;
+					$grid[$startline][$startlinex-1][1] = $red;
+					$grid[$startline][$startlinex-1][2] = $green;
+					$grid[$startline][$startlinex-1][3] = $blue;
+					if ($linesize > 3) {
+						$grid[$startline][$startlinex+2][1] = $red;
+						$grid[$startline][$startlinex+2][2] = $green;
+						$grid[$startline][$startlinex+2][3] = $blue;
+						$grid[$startline][$startlinex-2][1] = $red;
+						$grid[$startline][$startlinex-2][2] = $green;
+						$grid[$startline][$startlinex-2][3] = $blue;
+					}
+					if ($linesize > 4) {
+						$grid[$startline][$startlinex+3][1] = $red;
+						$grid[$startline][$startlinex+3][2] = $green;
+						$grid[$startline][$startlinex+3][3] = $blue;
+						$grid[$startline][$startlinex-3][1] = $red;
+						$grid[$startline][$startlinex-3][2] = $green;
+						$grid[$startline][$startlinex-3][3] = $blue;
+					}
+					if ($linesize > 5) {
+						$grid[$startline][$startlinex+4][1] = $red;
+						$grid[$startline][$startlinex+4][2] = $green;
+						$grid[$startline][$startlinex+4][3] = $blue;
+						$grid[$startline][$startlinex-4][1] = $red;
+						$grid[$startline][$startlinex-4][2] = $green;
+						$grid[$startline][$startlinex-4][3] = $blue;
+					}
+
+				}
+				$linevar++;
+			
+			}
+		
+		}
+		
 		// Draw a large grid to the screen
 
 		$gvar = 1;
@@ -2285,6 +2958,12 @@
                 	<strong>V Lines:</strong> Off<input name="lines" type="radio" value="off" <?php if (($_REQUEST['lines'] == 'off') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Colour 1<input name="lines" type="radio" value="one" <?php if ($_REQUEST['lines'] == 'one') {echo 'checked';}?>> Random<input name="lines" type="radio" value="random" <?php if ($_REQUEST['lines'] == 'random') {echo 'checked';}?>>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 	<strong>H Lines:</strong> Off<input name="hlines" type="radio" value="off" <?php if (($_REQUEST['hlines'] == 'off') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Colour 1<input name="hlines" type="radio" value="one" <?php if ($_REQUEST['hlines'] == 'one') {echo 'checked';}?>> Random<input name="hlines" type="radio" value="random" <?php if ($_REQUEST['hlines'] == 'random') {echo 'checked';}?>>
+                </div>
+            </div>
+            <div class="cbox">
+                <div class="cb">
+                	<strong>Crosses:</strong> Off<input name="crosses" type="radio" value="off" <?php if (($_REQUEST['crosses'] == 'off') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Colour 1<input name="crosses" type="radio" value="one" <?php if ($_REQUEST['crosses'] == 'one') {echo 'checked';}?>> Random<input name="crosses" type="radio" value="random" <?php if ($_REQUEST['crosses'] == 'random') {echo 'checked';}?>>
+
                 </div>
             </div>
             <div class="cbox">
@@ -3108,6 +3787,679 @@
 					}
 				
 				}
+				
+				if ($_REQUEST['crosses'] == 'one') {
+		
+		
+					// Cross drawing one colour
+					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$red = rand($r11, $r21);
+						$green = rand($r31, $r41);
+						$blue = rand($r51, $r61);
+						$linesize = rand(3,6);
+						$startline = rand(1,$yend);
+						$startlinex = rand(1,$xend);
+						$grid[$startline][$startlinex][1] = $red;
+						$grid[$startline][$startlinex][2] = $green;
+						$grid[$startline][$startlinex][3] = $blue;
+						$grid[$startline+1][$startlinex][1] = $red;
+						$grid[$startline+1][$startlinex][2] = $green;
+						$grid[$startline+1][$startlinex][3] = $blue;
+						$grid[$startline-1][$startlinex][1] = $red;
+						$grid[$startline-1][$startlinex][2] = $green;
+						$grid[$startline-1][$startlinex][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline+2][$startlinex][1] = $red;
+							$grid[$startline+2][$startlinex][2] = $green;
+							$grid[$startline+2][$startlinex][3] = $blue;
+							$grid[$startline-2][$startlinex][1] = $red;
+							$grid[$startline-2][$startlinex][2] = $green;
+							$grid[$startline-2][$startlinex][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline+3][$startlinex][1] = $red;
+							$grid[$startline+3][$startlinex][2] = $green;
+							$grid[$startline+3][$startlinex][3] = $blue;
+							$grid[$startline-3][$startlinex][1] = $red;
+							$grid[$startline-3][$startlinex][2] = $green;
+							$grid[$startline-3][$startlinex][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline+4][$startlinex][1] = $red;
+							$grid[$startline+4][$startlinex][2] = $green;
+							$grid[$startline+4][$startlinex][3] = $blue;
+							$grid[$startline-4][$startlinex][1] = $red;
+							$grid[$startline-4][$startlinex][2] = $green;
+							$grid[$startline-4][$startlinex][3] = $blue;
+						}
+						$grid[$startline][$startlinex+1][1] = $red;
+						$grid[$startline][$startlinex+1][2] = $green;
+						$grid[$startline][$startlinex+1][3] = $blue;
+						$grid[$startline][$startlinex-1][1] = $red;
+						$grid[$startline][$startlinex-1][2] = $green;
+						$grid[$startline][$startlinex-1][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline][$startlinex+2][1] = $red;
+							$grid[$startline][$startlinex+2][2] = $green;
+							$grid[$startline][$startlinex+2][3] = $blue;
+							$grid[$startline][$startlinex-2][1] = $red;
+							$grid[$startline][$startlinex-2][2] = $green;
+							$grid[$startline][$startlinex-2][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline][$startlinex+3][1] = $red;
+							$grid[$startline][$startlinex+3][2] = $green;
+							$grid[$startline][$startlinex+3][3] = $blue;
+							$grid[$startline][$startlinex-3][1] = $red;
+							$grid[$startline][$startlinex-3][2] = $green;
+							$grid[$startline][$startlinex-3][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline][$startlinex+4][1] = $red;
+							$grid[$startline][$startlinex+4][2] = $green;
+							$grid[$startline][$startlinex+4][3] = $blue;
+							$grid[$startline][$startlinex-4][1] = $red;
+							$grid[$startline][$startlinex-4][2] = $green;
+							$grid[$startline][$startlinex-4][3] = $blue;
+						}
+						$linevar++;
+					
+					}
+					
+				} else if ($_REQUEST['crosses'] == 'random') {
+				
+				
+					// Cross drawing random colours
+					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$num = rand(1, 8);
+						if ($num == 1) {
+							$red = rand($r11, $r21);
+							$green = rand($r31, $r41);
+							$blue = rand($r51, $r61);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+						}
+						else if ($num == 2) {
+							$red = rand($r12, $r22);
+							$green = rand($r32, $r42);
+							$blue = rand($r52, $r62);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 3) {
+							$red = rand($r13, $r23);
+							$green = rand($r33, $r43);
+							$blue = rand($r53, $r63);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 4) {
+							$red = rand($r14, $r24);
+							$green = rand($r34, $r44);
+							$blue = rand($r54, $r64);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 5) {
+							$red = rand($r15, $r25);
+							$green = rand($r35, $r45);
+							$blue = rand($r55, $r65);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 6) {
+							$red = rand($r16, $r26);
+							$green = rand($r36, $r46);
+							$blue = rand($r56, $r66);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 7) {
+							$red = rand($r17, $r27);
+							$green = rand($r37, $r47);
+							$blue = rand($r57, $r67);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else {
+							$red = rand($r18, $r28);
+							$green = rand($r38, $r48);
+							$blue = rand($r58, $r68);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						$linevar++;
+					
+					}
+				
+				}
 					
 				// Draw a large grid
 			
@@ -3893,6 +5245,681 @@
 					}
 				
 				}
+				
+				if ($_REQUEST['crosses'] == 'one') {
+		
+		
+					// Cross drawing one colour
+					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$red = rand($r11, $r21);
+						$green = rand($r31, $r41);
+						$blue = rand($r51, $r61);
+						$linesize = rand(3,6);
+						$startline = rand(1,$yend);
+						$startlinex = rand(1,$xend);
+						$grid[$startline][$startlinex][1] = $red;
+						$grid[$startline][$startlinex][2] = $green;
+						$grid[$startline][$startlinex][3] = $blue;
+						$grid[$startline+1][$startlinex][1] = $red;
+						$grid[$startline+1][$startlinex][2] = $green;
+						$grid[$startline+1][$startlinex][3] = $blue;
+						$grid[$startline-1][$startlinex][1] = $red;
+						$grid[$startline-1][$startlinex][2] = $green;
+						$grid[$startline-1][$startlinex][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline+2][$startlinex][1] = $red;
+							$grid[$startline+2][$startlinex][2] = $green;
+							$grid[$startline+2][$startlinex][3] = $blue;
+							$grid[$startline-2][$startlinex][1] = $red;
+							$grid[$startline-2][$startlinex][2] = $green;
+							$grid[$startline-2][$startlinex][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline+3][$startlinex][1] = $red;
+							$grid[$startline+3][$startlinex][2] = $green;
+							$grid[$startline+3][$startlinex][3] = $blue;
+							$grid[$startline-3][$startlinex][1] = $red;
+							$grid[$startline-3][$startlinex][2] = $green;
+							$grid[$startline-3][$startlinex][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline+4][$startlinex][1] = $red;
+							$grid[$startline+4][$startlinex][2] = $green;
+							$grid[$startline+4][$startlinex][3] = $blue;
+							$grid[$startline-4][$startlinex][1] = $red;
+							$grid[$startline-4][$startlinex][2] = $green;
+							$grid[$startline-4][$startlinex][3] = $blue;
+						}
+						$grid[$startline][$startlinex+1][1] = $red;
+						$grid[$startline][$startlinex+1][2] = $green;
+						$grid[$startline][$startlinex+1][3] = $blue;
+						$grid[$startline][$startlinex-1][1] = $red;
+						$grid[$startline][$startlinex-1][2] = $green;
+						$grid[$startline][$startlinex-1][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline][$startlinex+2][1] = $red;
+							$grid[$startline][$startlinex+2][2] = $green;
+							$grid[$startline][$startlinex+2][3] = $blue;
+							$grid[$startline][$startlinex-2][1] = $red;
+							$grid[$startline][$startlinex-2][2] = $green;
+							$grid[$startline][$startlinex-2][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline][$startlinex+3][1] = $red;
+							$grid[$startline][$startlinex+3][2] = $green;
+							$grid[$startline][$startlinex+3][3] = $blue;
+							$grid[$startline][$startlinex-3][1] = $red;
+							$grid[$startline][$startlinex-3][2] = $green;
+							$grid[$startline][$startlinex-3][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline][$startlinex+4][1] = $red;
+							$grid[$startline][$startlinex+4][2] = $green;
+							$grid[$startline][$startlinex+4][3] = $blue;
+							$grid[$startline][$startlinex-4][1] = $red;
+							$grid[$startline][$startlinex-4][2] = $green;
+							$grid[$startline][$startlinex-4][3] = $blue;
+						}
+						$linevar++;
+					
+					}
+					
+				} else if ($_REQUEST['crosses'] == 'random') {
+				
+				
+					// Cross drawing random colours
+					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$num = rand(1, 8);
+						if ($num == 1) {
+							$red = rand($r11, $r21);
+							$green = rand($r31, $r41);
+							$blue = rand($r51, $r61);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+						}
+						else if ($num == 2) {
+							$red = rand($r12, $r22);
+							$green = rand($r32, $r42);
+							$blue = rand($r52, $r62);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 3) {
+							$red = rand($r13, $r23);
+							$green = rand($r33, $r43);
+							$blue = rand($r53, $r63);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 4) {
+							$red = rand($r14, $r24);
+							$green = rand($r34, $r44);
+							$blue = rand($r54, $r64);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 5) {
+							$red = rand($r15, $r25);
+							$green = rand($r35, $r45);
+							$blue = rand($r55, $r65);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 6) {
+							$red = rand($r16, $r26);
+							$green = rand($r36, $r46);
+							$blue = rand($r56, $r66);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 7) {
+							$red = rand($r17, $r27);
+							$green = rand($r37, $r47);
+							$blue = rand($r57, $r67);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else {
+							$red = rand($r18, $r28);
+							$green = rand($r38, $r48);
+							$blue = rand($r58, $r68);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						$linevar++;
+					
+					}
+				
+				}
 					
 				// Draw a pixel grid
 			
@@ -4645,7 +6672,682 @@
 					}
 				
 				}
+
+				if ($_REQUEST['crosses'] == 'one') {
+		
+		
+					// Cross drawing one colour
 					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$red = rand($r11, $r21);
+						$green = rand($r31, $r41);
+						$blue = rand($r51, $r61);
+						$linesize = rand(3,6);
+						$startline = rand(1,$yend);
+						$startlinex = rand(1,$xend);
+						$grid[$startline][$startlinex][1] = $red;
+						$grid[$startline][$startlinex][2] = $green;
+						$grid[$startline][$startlinex][3] = $blue;
+						$grid[$startline+1][$startlinex][1] = $red;
+						$grid[$startline+1][$startlinex][2] = $green;
+						$grid[$startline+1][$startlinex][3] = $blue;
+						$grid[$startline-1][$startlinex][1] = $red;
+						$grid[$startline-1][$startlinex][2] = $green;
+						$grid[$startline-1][$startlinex][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline+2][$startlinex][1] = $red;
+							$grid[$startline+2][$startlinex][2] = $green;
+							$grid[$startline+2][$startlinex][3] = $blue;
+							$grid[$startline-2][$startlinex][1] = $red;
+							$grid[$startline-2][$startlinex][2] = $green;
+							$grid[$startline-2][$startlinex][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline+3][$startlinex][1] = $red;
+							$grid[$startline+3][$startlinex][2] = $green;
+							$grid[$startline+3][$startlinex][3] = $blue;
+							$grid[$startline-3][$startlinex][1] = $red;
+							$grid[$startline-3][$startlinex][2] = $green;
+							$grid[$startline-3][$startlinex][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline+4][$startlinex][1] = $red;
+							$grid[$startline+4][$startlinex][2] = $green;
+							$grid[$startline+4][$startlinex][3] = $blue;
+							$grid[$startline-4][$startlinex][1] = $red;
+							$grid[$startline-4][$startlinex][2] = $green;
+							$grid[$startline-4][$startlinex][3] = $blue;
+						}
+						$grid[$startline][$startlinex+1][1] = $red;
+						$grid[$startline][$startlinex+1][2] = $green;
+						$grid[$startline][$startlinex+1][3] = $blue;
+						$grid[$startline][$startlinex-1][1] = $red;
+						$grid[$startline][$startlinex-1][2] = $green;
+						$grid[$startline][$startlinex-1][3] = $blue;
+						if ($linesize > 3) {
+							$grid[$startline][$startlinex+2][1] = $red;
+							$grid[$startline][$startlinex+2][2] = $green;
+							$grid[$startline][$startlinex+2][3] = $blue;
+							$grid[$startline][$startlinex-2][1] = $red;
+							$grid[$startline][$startlinex-2][2] = $green;
+							$grid[$startline][$startlinex-2][3] = $blue;
+						}
+						if ($linesize > 4) {
+							$grid[$startline][$startlinex+3][1] = $red;
+							$grid[$startline][$startlinex+3][2] = $green;
+							$grid[$startline][$startlinex+3][3] = $blue;
+							$grid[$startline][$startlinex-3][1] = $red;
+							$grid[$startline][$startlinex-3][2] = $green;
+							$grid[$startline][$startlinex-3][3] = $blue;
+						}
+						if ($linesize > 5) {
+							$grid[$startline][$startlinex+4][1] = $red;
+							$grid[$startline][$startlinex+4][2] = $green;
+							$grid[$startline][$startlinex+4][3] = $blue;
+							$grid[$startline][$startlinex-4][1] = $red;
+							$grid[$startline][$startlinex-4][2] = $green;
+							$grid[$startline][$startlinex-4][3] = $blue;
+						}
+						$linevar++;
+					
+					}
+					
+				} else if ($_REQUEST['crosses'] == 'random') {
+				
+				
+					// Cross drawing random colours
+					
+					$linevar = 1;
+					//$nublines = rand(3,16);
+					
+					while ($linevar <= $nublines) {
+						$num = rand(1, 8);
+						if ($num == 1) {
+							$red = rand($r11, $r21);
+							$green = rand($r31, $r41);
+							$blue = rand($r51, $r61);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+						}
+						else if ($num == 2) {
+							$red = rand($r12, $r22);
+							$green = rand($r32, $r42);
+							$blue = rand($r52, $r62);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 3) {
+							$red = rand($r13, $r23);
+							$green = rand($r33, $r43);
+							$blue = rand($r53, $r63);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 4) {
+							$red = rand($r14, $r24);
+							$green = rand($r34, $r44);
+							$blue = rand($r54, $r64);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 5) {
+							$red = rand($r15, $r25);
+							$green = rand($r35, $r45);
+							$blue = rand($r55, $r65);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 6) {
+							$red = rand($r16, $r26);
+							$green = rand($r36, $r46);
+							$blue = rand($r56, $r66);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else if ($num == 7) {
+							$red = rand($r17, $r27);
+							$green = rand($r37, $r47);
+							$blue = rand($r57, $r67);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						else {
+							$red = rand($r18, $r28);
+							$green = rand($r38, $r48);
+							$blue = rand($r58, $r68);
+							$linesize = rand(3,6);
+							$startline = rand(1,$yend);
+							$startlinex = rand(1,$xend);
+							$grid[$startline][$startlinex][1] = $red;
+							$grid[$startline][$startlinex][2] = $green;
+							$grid[$startline][$startlinex][3] = $blue;
+							$grid[$startline+1][$startlinex][1] = $red;
+							$grid[$startline+1][$startlinex][2] = $green;
+							$grid[$startline+1][$startlinex][3] = $blue;
+							$grid[$startline-1][$startlinex][1] = $red;
+							$grid[$startline-1][$startlinex][2] = $green;
+							$grid[$startline-1][$startlinex][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline+2][$startlinex][1] = $red;
+								$grid[$startline+2][$startlinex][2] = $green;
+								$grid[$startline+2][$startlinex][3] = $blue;
+								$grid[$startline-2][$startlinex][1] = $red;
+								$grid[$startline-2][$startlinex][2] = $green;
+								$grid[$startline-2][$startlinex][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline+3][$startlinex][1] = $red;
+								$grid[$startline+3][$startlinex][2] = $green;
+								$grid[$startline+3][$startlinex][3] = $blue;
+								$grid[$startline-3][$startlinex][1] = $red;
+								$grid[$startline-3][$startlinex][2] = $green;
+								$grid[$startline-3][$startlinex][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline+4][$startlinex][1] = $red;
+								$grid[$startline+4][$startlinex][2] = $green;
+								$grid[$startline+4][$startlinex][3] = $blue;
+								$grid[$startline-4][$startlinex][1] = $red;
+								$grid[$startline-4][$startlinex][2] = $green;
+								$grid[$startline-4][$startlinex][3] = $blue;
+							}
+							$grid[$startline][$startlinex+1][1] = $red;
+							$grid[$startline][$startlinex+1][2] = $green;
+							$grid[$startline][$startlinex+1][3] = $blue;
+							$grid[$startline][$startlinex-1][1] = $red;
+							$grid[$startline][$startlinex-1][2] = $green;
+							$grid[$startline][$startlinex-1][3] = $blue;
+							if ($linesize > 3) {
+								$grid[$startline][$startlinex+2][1] = $red;
+								$grid[$startline][$startlinex+2][2] = $green;
+								$grid[$startline][$startlinex+2][3] = $blue;
+								$grid[$startline][$startlinex-2][1] = $red;
+								$grid[$startline][$startlinex-2][2] = $green;
+								$grid[$startline][$startlinex-2][3] = $blue;
+							}
+							if ($linesize > 4) {
+								$grid[$startline][$startlinex+3][1] = $red;
+								$grid[$startline][$startlinex+3][2] = $green;
+								$grid[$startline][$startlinex+3][3] = $blue;
+								$grid[$startline][$startlinex-3][1] = $red;
+								$grid[$startline][$startlinex-3][2] = $green;
+								$grid[$startline][$startlinex-3][3] = $blue;
+							}
+							if ($linesize > 5) {
+								$grid[$startline][$startlinex+4][1] = $red;
+								$grid[$startline][$startlinex+4][2] = $green;
+								$grid[$startline][$startlinex+4][3] = $blue;
+								$grid[$startline][$startlinex-4][1] = $red;
+								$grid[$startline][$startlinex-4][2] = $green;
+								$grid[$startline][$startlinex-4][3] = $blue;
+							}
+		
+						}
+						$linevar++;
+					
+					}
+				
+				}
+
 				// Draw a pixel grid
 			
 				$gvar = 1;
