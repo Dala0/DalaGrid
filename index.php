@@ -2464,6 +2464,39 @@
 						echo ','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
 					}	
 				}
+				else if ($_REQUEST['rt'] == 'random2') {
+					$rrn = rand(1,10);
+					if ($rrn == 8) {
+						echo '<div style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');width:20px;height:20px;float: left;">  </div>';
+					}
+					else if ($rrn == 9) {
+						echo '<div style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 20px; height: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; float: left; margin: 0px;">  </div>';
+					}
+					else if ($rrn == 1) {
+						echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 2) {
+						echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 3) {
+						echo '<div style="border-right: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 4) {
+						echo '<div style="border-left: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 5) {
+						echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 6) {
+						echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 20px solid transparent; float: left;">  </div>';
+					}
+					else if ($rrn == 7) {
+						echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 20px solid transparent; float: left;">  </div>';
+					}
+					else {
+						echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
+					}	
+				}
 
 				$rvar++;
 			}
@@ -3099,7 +3132,7 @@
                 <div class="cb">
                 	<strong>Render Type:</strong> Square<input name="rt" type="radio" value="square" <?php if (($_REQUEST['rt'] == 'square') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Circle<input name="rt" type="radio" value="circle" <?php if ($_REQUEST['rt'] == 'circle') {echo 'checked';}?>> Triangle<input name="rt" type="radio" value="triangle" <?php if ($_REQUEST['rt'] == 'triangle') {echo 'checked';}?>> Triangle 2<input name="rt" type="radio" value="triangle2" <?php if ($_REQUEST['rt'] == 'triangle2') {echo 'checked';}?>> Triangle 3<input name="rt" type="radio" value="triangle3" <?php if ($_REQUEST['rt'] == 'triangle3') {echo 'checked';}?>> Triangle 4<input name="rt" type="radio" value="triangle4" <?php if ($_REQUEST['rt'] == 'triangle4') {echo 'checked';}?>> Triangle 5<input name="rt" type="radio" value="triangle5" <?php if ($_REQUEST['rt'] == 'triangle5') {echo 'checked';}?>> Triangle 6<input name="rt" type="radio" value="triangle6" <?php if ($_REQUEST['rt'] == 'triangle6') {echo 'checked';}?>>
                     <br />
-                    Triangle 7<input name="rt" type="radio" value="triangle7" <?php if ($_REQUEST['rt'] == 'triangle7') {echo 'checked';}?>> Triangle 8<input name="rt" type="radio" value="triangle8" <?php if ($_REQUEST['rt'] == 'triangle8') {echo 'checked';}?>> Random Triangles<input name="rt" type="radio" value="randomt" <?php if ($_REQUEST['rt'] == 'randomt') {echo 'checked';}?>> Random Triangles 2<input name="rt" type="radio" value="randomt2" <?php if ($_REQUEST['rt'] == 'randomt2') {echo 'checked';}?>> Random Triangles 3<input name="rt" type="radio" value="randomt3" <?php if ($_REQUEST['rt'] == 'randomt3') {echo 'checked';}?>> Random<input name="rt" type="radio" value="random" <?php if ($_REQUEST['rt'] == 'random') {echo 'checked';}?>>
+                    Triangle 7<input name="rt" type="radio" value="triangle7" <?php if ($_REQUEST['rt'] == 'triangle7') {echo 'checked';}?>> Triangle 8<input name="rt" type="radio" value="triangle8" <?php if ($_REQUEST['rt'] == 'triangle8') {echo 'checked';}?>> Random Triangles<input name="rt" type="radio" value="randomt" <?php if ($_REQUEST['rt'] == 'randomt') {echo 'checked';}?>> Random Triangles 2<input name="rt" type="radio" value="randomt2" <?php if ($_REQUEST['rt'] == 'randomt2') {echo 'checked';}?>> Random Triangles 3<input name="rt" type="radio" value="randomt3" <?php if ($_REQUEST['rt'] == 'randomt3') {echo 'checked';}?>> Random<input name="rt" type="radio" value="random" <?php if ($_REQUEST['rt'] == 'random') {echo 'checked';}?>> Random 2<input name="rt" type="radio" value="random2" <?php if ($_REQUEST['rt'] == 'random2') {echo 'checked';}?>>
                 </div>
             </div>
             <div class="cbox">
@@ -3109,7 +3142,7 @@
             </div>
             <div class="cbox">
                 <div class="cb">
-                    <strong>Text:</strong> Off<input name="text" type="radio" value="off" <?php if (($_REQUEST['text'] == 'off') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Colour 1<input name="text" type="radio" value="one" <?php if ($_REQUEST['text'] == 'one') {echo 'checked';}?>> Random<input name="text" type="radio" value="random" <?php if ($_REQUEST['text'] == 'random') {echo 'checked';}?>> <input name="characters" type="text" value="<?php echo $_REQUEST['characters'];?>" size="22"> X <input name="textx" type="text" value="<?php echo $textx;?>" size="3"> Y <input name="texty" type="text" value="<?php echo $texty;?>" size="3"> Absolute<input name="textp" type="radio" value="absolute" <?php if (($_REQUEST['textp'] == 'absolute') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Once<input name="textp" type="radio" value="once" <?php if ($_REQUEST['textp'] == 'once') {echo 'checked';}?>> Random<input name="textp" type="radio" value="random" <?php if ($_REQUEST['textp'] == 'random') {echo 'checked';}?>>
+                    <strong>Text:</strong> Off<input name="text" type="radio" value="off" <?php if (($_REQUEST['text'] == 'off') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Colour 1<input name="text" type="radio" value="one" <?php if ($_REQUEST['text'] == 'one') {echo 'checked';}?>> Random<input name="text" type="radio" value="random" <?php if ($_REQUEST['text'] == 'random') {echo 'checked';}?>> <input name="characters" type="text" value="<?php echo $_REQUEST['characters'];?>" size="22"> X <input name="textx" type="text" value="<?php echo $textx;?>" size="3"> Y <input name="texty" type="text" value="<?php echo $texty;?>" size="3"> Absolute<input name="textp" type="radio" value="absolute" <?php if (($_REQUEST['textp'] == 'absolute') || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>> Once<input name="textp" type="radio" value="once" <?php if ($_REQUEST['textp'] == 'once') {echo 'checked';}?>> Random<input name="textp" type="radio" value="random" <?php if ($_REQUEST['textp'] == 'random') {echo 'checked';}?>> 
                 </div>
             </div>
             <div class="cbox">
@@ -3267,7 +3300,39 @@
 									echo ','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 8px solid transparent; float: left;">  </div>';
 								}	
 							}
-							//echo ','.$grid[$gvar][$rvar][3].');width:8px;height:8px;float: left;">  </div>';
+							else if ($_REQUEST['rt'] == 'random2') {
+								$rrn = rand(1,10);
+								if ($rrn == 8) {
+									echo '<div class="square" style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');">  </div>';
+								}
+								else if ($rrn == 9) {
+									echo '<div class="circle" style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');">  </div>';
+								}
+								else if ($rrn == 1) {
+									echo '<div style="border-bottom: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; float: left;">  </div>';
+								}
+								else if ($rrn == 2) {
+									echo '<div style="border-top: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; float: left;">  </div>';
+								}
+								else if ($rrn == 3) {
+									echo '<div style="border-right: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; float: left;">  </div>';
+								}
+								else if ($rrn == 4) {
+									echo '<div style="border-left: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; float: left;">  </div>';
+								}	
+								else if ($rrn == 5) {
+									echo '<div style="border-top: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 8px solid transparent; float: left;">  </div>';
+								}
+								else if ($rrn == 6) {
+									echo '<div style="border-top: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 8px solid transparent; float: left;">  </div>';
+								}
+								else if ($rrn == 7) {
+									echo '<div style="border-bottom: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 8px solid transparent; float: left;">  </div>';
+								}
+								else {
+									echo '<div style="border-bottom: 8px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 8px solid transparent; float: left;">  </div>';
+								}	
+							}
 							$rvar++;
 						}
 						$gvar++;
@@ -5756,6 +5821,39 @@
 								echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].',';
 								echo $grid[$gvar][$rvar][2];
 								echo ','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
+							}	
+						}
+						else if ($_REQUEST['rt'] == 'random2') {
+							$rrn = rand(1,10);
+							if ($rrn == 8) {
+								echo '<div style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');width:20px;height:20px;float: left;">  </div>';
+							}
+							else if ($rrn == 9) {
+								echo '<div style="background:rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 20px; height: 20px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; float: left; margin: 0px;">  </div>';
+							}
+							else if ($rrn == 1) {
+								echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 2) {
+								echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 3) {
+								echo '<div style="border-right: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 4) {
+								echo '<div style="border-left: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].'); width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 5) {
+								echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 6) {
+								echo '<div style="border-top: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 20px solid transparent; float: left;">  </div>';
+							}
+							else if ($rrn == 7) {
+								echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-right: 20px solid transparent; float: left;">  </div>';
+							}
+							else {
+								echo '<div style="border-bottom: 20px solid rgb('.$grid[$gvar][$rvar][1].','.$grid[$gvar][$rvar][2].','.$grid[$gvar][$rvar][3].');	width: 0; height: 0; border-left: 20px solid transparent; float: left;">  </div>';
 							}	
 						}
 		
