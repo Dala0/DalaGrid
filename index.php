@@ -737,6 +737,48 @@
 			$r68 = rand($r58, 255);
 		}
 
+		if ($_REQUEST['or19'] == 1) {
+			$r19 = $_REQUEST['r19'];
+		}
+		else {
+			$r19 = rand(1, 255);
+		}
+		
+		if ($_REQUEST['or29'] == 1) {
+			$r29 = $_REQUEST['r29'];
+		}
+		else {
+			$r29 = rand($r19, 255);
+		}
+
+		if ($_REQUEST['or39'] == 1) {
+			$r39 = $_REQUEST['r39'];
+		}
+		else {
+			$r39 = rand(1, 255);
+		}
+		
+		if ($_REQUEST['or49'] == 1) {
+			$r49 = $_REQUEST['r49'];
+		}
+		else {
+			$r49 = rand($r39, 255);
+		}
+		
+		if ($_REQUEST['or59'] == 1) {
+			$r59 = $_REQUEST['r59'];
+		}
+		else {
+			$r59 = rand(1, 255);
+		}
+		
+		if ($_REQUEST['or69'] == 1) {
+			$r69 = $_REQUEST['r69'];
+		}
+		else {
+			$r69 = rand($r59, 255);
+		}
+
 		// Set up colour groups
 		
 		$cn = 1;
@@ -3147,6 +3189,23 @@
             </div>
             <div class="cbox">
                 <div class="cb">
+                    Text Colour Override<input name="textcolour" type="checkbox" value="1" <?php if ($_REQUEST['textcolour'] == 1) {echo 'checked';}?>>&nbsp;&nbsp;&nbsp;
+                    <input name="or19" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or19'] == 1) {echo 'checked';}?>>
+                    <input name="r19" type="text" value="<?php echo $r19;?>" size="3">
+                    <input name="or29" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or29'] == 1) {echo 'checked';}?>>
+                    <input name="r29" type="text" value="<?php echo $r29;?>" size="3">
+                    <input name="or39" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or39'] == 1) {echo 'checked';}?>>
+                    <input name="r39" type="text" value="<?php echo $r39;?>" size="3">
+                    <input name="or49" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or49'] == 1) {echo 'checked';}?>>
+                    <input name="r49" type="text" value="<?php echo $r49;?>" size="3">
+                    <input name="or59" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or59'] == 1) {echo 'checked';}?>>
+                    <input name="r59" type="text" value="<?php echo $r59;?>" size="3">
+                    <input name="or69" type="checkbox" id="clampable" value="1" <?php if ($_REQUEST['or69'] == 1) {echo 'checked';}?>>
+                    <input name="r69" type="text" value="<?php echo $r69;?>" size="3">
+                 </div>
+            </div>
+            <div class="cbox">
+                <div class="cb">
                     Tile Preview: <input name="tiles" type="checkbox" value="1" <?php if ($_REQUEST['tiles'] == 1) {echo 'checked';}?>>
                     &nbsp;&nbsp;&nbsp;
                     Large Grid: <input name="lgrid" type="checkbox" value="1" <?php if (($_REQUEST['lgrid'] == 1) || ($_REQUEST['submited'] == 0)) {echo 'checked';}?>>
@@ -5477,6 +5536,12 @@
 										$blue = rand($r58, $r68);
 									}
 								}
+								
+								if ($_REQUEST['textcolour'] == '1') {
+									$red = rand($r19, $r29);
+									$green = rand($r39, $r49);
+									$blue = rand($r59, $r69);	
+								}
 									
 								while ($bmvar <= $bmy) {
 								
@@ -5651,6 +5716,12 @@
 									$green = rand($r38, $r48);
 									$blue = rand($r58, $r68);
 								}
+							}
+							
+							if ($_REQUEST['textcolour'] == '1') {
+								$red = rand($r19, $r29);
+								$green = rand($r39, $r49);
+								$blue = rand($r59, $r69);	
 							}
 								
 							while ($bmvar <= $bmy) {
