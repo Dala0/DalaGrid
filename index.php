@@ -363,6 +363,565 @@
     	<div class="tbox">
         <?php
 		
+		if (($_REQUEST['text'] == 'one') || ($_REQUEST['text'] == 'random')) {
+		
+			$abits = array
+				  (
+				  array(0,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$bbits = array
+				  (
+				  array(1,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,0)
+				  );
+				  
+			$cbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$dbits = array
+				  (
+				  array(1,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,0)
+				  );
+				  
+			$ebits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,1,0,0,0)
+				  ,
+				  array(1,1,1,1,0,0,0)
+				  ,
+				  array(1,0,0,1,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$fbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,1,0,0,0)
+				  ,
+				  array(1,1,1,1,0,0,0)
+				  ,
+				  array(1,0,0,1,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,1,0,0,0,0,0)
+				  );
+				  
+			$gbits = array
+				  (
+				  array(1,1,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$hbits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$ibits = array
+				  (
+				  array(1,1,1)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(0,1,0)
+				  ,
+				  array(1,1,1)
+				  );
+				  
+			$jbits = array
+				  (
+				  array(0,0,0,0,0,1,1,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$kbits = array
+				  (
+				  array(1,1,1,0,0,0,1,1)
+				  ,
+				  array(0,1,0,0,0,1,0,0)
+				  ,
+				  array(0,1,0,0,1,0,0,0)
+				  ,
+				  array(0,1,0,1,0,0,0,0)
+				  ,
+				  array(0,1,1,0,0,0,0,0)
+				  ,
+				  array(0,1,0,1,0,0,0,0)
+				  ,
+				  array(0,1,0,0,1,0,0,0)
+				  ,
+				  array(0,1,0,0,0,1,0,0)
+				  ,
+				  array(1,1,1,0,0,0,1,1)
+				  );
+				  
+			$lbits = array
+				  (
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$mbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,1,1,1,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$nbits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,1,0,0,0,1)
+				  ,
+				  array(1,0,1,0,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,0,1,0,1)
+				  ,
+				  array(1,0,0,0,1,0,1)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$obits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$pbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,1,0,0,0,0,0)
+				  );
+				  
+			$qbits = array
+				  (
+				  array(1,1,1,1,1,1,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,1,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(0,0,0,0,0,0,0,1)
+				  );
+				  
+			$rbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,1,0,0,0,0,0)
+				  ,
+				  array(1,0,1,1,0,0,0)
+				  ,
+				  array(1,0,0,0,1,0,0)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$sbits = array
+				  (
+				  array(0,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,0)
+				  ,
+				  array(0,1,1,1,1,1,0)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,0)
+				  );
+				  
+			$tbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,1,1,1,0,0)
+				  );
+				  
+			$ubits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$vbits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(0,0,1,0,1,0,0)
+				  ,
+				  array(0,0,1,0,1,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  );
+				  
+			$wbits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,0,1,1,1,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,0,0,1,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$xbits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(0,0,1,0,1,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,1,0,1,0,0)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,0,0,0,1,1)
+				  );
+				  
+			$ybits = array
+				  (
+				  array(1,1,0,0,0,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(0,1,0,0,0,1,0)
+				  ,
+				  array(0,0,1,0,1,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  );
+				  
+			$zbits = array
+				  (
+				  array(1,1,1,1,1,1,1)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(0,0,0,0,0,1,0)
+				  ,
+				  array(0,0,0,0,1,0,0)
+				  ,
+				  array(0,0,0,1,0,0,0)
+				  ,
+				  array(0,0,1,0,0,0,0)
+				  ,
+				  array(0,1,0,0,0,0,0)
+				  ,
+				  array(1,0,0,0,0,0,1)
+				  ,
+				  array(1,1,1,1,1,1,1)
+				  );
+				  
+			$spacebits = array
+				  (
+				  array(0,0,0,0,0)
+				  );
+			
+			$textl = strlen($_REQUEST['characters']);
+
+		}
+		
 		if (!isset($textx)) {
 			$textx = 10;
 		}
@@ -4815,563 +5374,7 @@
 				
 				
 				if (($_REQUEST['text'] == 'one') || ($_REQUEST['text'] == 'random')) {
-		//		if ($_REQUEST['text'] == 1) {
 				
-					$abits = array
-						  (
-						  array(0,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$bbits = array
-						  (
-						  array(1,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,0)
-						  );
-						  
-					$cbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$dbits = array
-						  (
-						  array(1,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,0)
-						  );
-						  
-					$ebits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,1,0,0,0)
-						  ,
-						  array(1,1,1,1,0,0,0)
-						  ,
-						  array(1,0,0,1,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$fbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,1,0,0,0)
-						  ,
-						  array(1,1,1,1,0,0,0)
-						  ,
-						  array(1,0,0,1,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,1,0,0,0,0,0)
-						  );
-						  
-					$gbits = array
-						  (
-						  array(1,1,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$hbits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$ibits = array
-						  (
-						  array(1,1,1)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(0,1,0)
-						  ,
-						  array(1,1,1)
-						  );
-						  
-					$jbits = array
-						  (
-						  array(0,0,0,0,0,1,1,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$kbits = array
-						  (
-						  array(1,1,1,0,0,0,1,1)
-						  ,
-						  array(0,1,0,0,0,1,0,0)
-						  ,
-						  array(0,1,0,0,1,0,0,0)
-						  ,
-						  array(0,1,0,1,0,0,0,0)
-						  ,
-						  array(0,1,1,0,0,0,0,0)
-						  ,
-						  array(0,1,0,1,0,0,0,0)
-						  ,
-						  array(0,1,0,0,1,0,0,0)
-						  ,
-						  array(0,1,0,0,0,1,0,0)
-						  ,
-						  array(1,1,1,0,0,0,1,1)
-						  );
-						  
-					$lbits = array
-						  (
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$mbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,1,1,1,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$nbits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,1,0,0,0,1)
-						  ,
-						  array(1,0,1,0,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,0,1,0,1)
-						  ,
-						  array(1,0,0,0,1,0,1)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$obits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$pbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,1,0,0,0,0,0)
-						  );
-						  
-					$qbits = array
-						  (
-						  array(1,1,1,1,1,1,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,1,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(0,0,0,0,0,0,0,1)
-						  );
-						  
-					$rbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,1,0,0,0,0,0)
-						  ,
-						  array(1,0,1,1,0,0,0)
-						  ,
-						  array(1,0,0,0,1,0,0)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$sbits = array
-						  (
-						  array(0,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,0)
-						  ,
-						  array(0,1,1,1,1,1,0)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,0)
-						  );
-						  
-					$tbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,1,1,1,0,0)
-						  );
-						  
-					$ubits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$vbits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(0,0,1,0,1,0,0)
-						  ,
-						  array(0,0,1,0,1,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  );
-						  
-					$wbits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,0,1,1,1,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,0,0,1,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$xbits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(0,0,1,0,1,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,1,0,1,0,0)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,0,0,0,1,1)
-						  );
-						  
-					$ybits = array
-						  (
-						  array(1,1,0,0,0,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(0,1,0,0,0,1,0)
-						  ,
-						  array(0,0,1,0,1,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  );
-						  
-					$zbits = array
-						  (
-						  array(1,1,1,1,1,1,1)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(0,0,0,0,0,1,0)
-						  ,
-						  array(0,0,0,0,1,0,0)
-						  ,
-						  array(0,0,0,1,0,0,0)
-						  ,
-						  array(0,0,1,0,0,0,0)
-						  ,
-						  array(0,1,0,0,0,0,0)
-						  ,
-						  array(1,0,0,0,0,0,1)
-						  ,
-						  array(1,1,1,1,1,1,1)
-						  );
-						  
-					$spacebits = array
-						  (
-						  array(0,0,0,0,0)
-						  );
-					
-					$textl = strlen($_REQUEST['characters']);
-
 					if ($_REQUEST['textp'] == 'absolute') {
 						$bmsy = $texty;
 						$bmsx = $textx;
@@ -7346,6 +7349,381 @@
 					
 					}
 				
+				}
+				
+				//Text drawing
+				
+				if (($_REQUEST['text'] == 'one') || ($_REQUEST['text'] == 'random')) {
+				
+					if ($_REQUEST['textp'] == 'absolute') {
+						$bmsy = $texty;
+						$bmsx = $textx;
+					}
+					else {
+						$bmsy = rand(1,220);
+						$bmsx = rand(1,140);
+					}
+					
+					if ($_REQUEST['textp'] == 'random') {
+					
+						$nubtext = rand(4,16);
+						$rtextvar = 1;
+						
+						while ($rtextvar <= $nubtext) {
+						
+							$textvar = 0;
+							
+							while ($textvar < $textl) {
+							
+								$character = substr($_REQUEST['characters'], $textvar, 1);
+								
+								switch ($character) {
+									case "A":
+										$drawbits = $abits;
+										break;
+									case "B":
+										$drawbits = $bbits;
+										break;
+									case "C":
+										$drawbits = $cbits;
+										break;
+									case "D":
+										$drawbits = $dbits;
+										break;
+									case "E":
+										$drawbits = $ebits;
+										break;
+									case "F":
+										$drawbits = $fbits;
+										break;
+									case "G":
+										$drawbits = $gbits;
+										break;
+									case "H":
+										$drawbits = $hbits;
+										break;
+									case "I":
+										$drawbits = $ibits;
+										break;
+									case "J":
+										$drawbits = $jbits;
+										break;
+									case "K":
+										$drawbits = $kbits;
+										break;
+									case "L":
+										$drawbits = $lbits;
+										break;
+									case "M":
+										$drawbits = $mbits;
+										break;
+									case "N":
+										$drawbits = $nbits;
+										break;
+									case "O":
+										$drawbits = $obits;
+										break;
+									case "P":
+										$drawbits = $pbits;
+										break;
+									case "Q":
+										$drawbits = $qbits;
+										break;
+									case "R":
+										$drawbits = $rbits;
+										break;
+									case "S":
+										$drawbits = $sbits;
+										break;
+									case "T":
+										$drawbits = $tbits;
+										break;
+									case "U":
+										$drawbits = $ubits;
+										break;
+									case "V":
+										$drawbits = $vbits;
+										break;
+									case "W":
+										$drawbits = $wbits;
+										break;
+									case "X":
+										$drawbits = $xbits;
+										break;
+									case "Y":
+										$drawbits = $ybits;
+										break;
+									case "Z":
+										$drawbits = $zbits;
+										break;
+									case " ":
+										$drawbits = $spacebits;
+										break;
+								}
+										  
+								$bmvar = 0;
+								$bmy = count($drawbits);
+								$bmx = count($drawbits[0]);
+									
+								if ($_REQUEST['text'] == 'one') {
+									$red = rand($r11, $r21);
+									$green = rand($r31, $r41);
+									$blue = rand($r51, $r61);	
+								}
+								else {
+									$num = rand(1, 8);
+									if ($num == 1) {
+										$red = rand($r11, $r21);
+										$green = rand($r31, $r41);
+										$blue = rand($r51, $r61);
+									}
+									else if ($num == 2) {
+										$red = rand($r12, $r22);
+										$green = rand($r32, $r42);
+										$blue = rand($r52, $r62);
+									}
+									else if ($num == 3) {
+										$red = rand($r13, $r23);
+										$green = rand($r33, $r43);
+										$blue = rand($r53, $r63);
+									}
+									else if ($num == 4) {
+										$red = rand($r14, $r24);
+										$green = rand($r34, $r44);
+										$blue = rand($r54, $r64);
+									}
+									else if ($num == 5) {
+										$red = rand($r15, $r25);
+										$green = rand($r35, $r45);
+										$blue = rand($r55, $r65);
+									}
+									else if ($num == 6) {
+										$red = rand($r16, $r26);
+										$green = rand($r36, $r46);
+										$blue = rand($r56, $r66);
+									}
+									else if ($num == 7) {
+										$red = rand($r17, $r27);
+										$green = rand($r37, $r47);
+										$blue = rand($r57, $r67);
+									}
+									else {
+										$red = rand($r18, $r28);
+										$green = rand($r38, $r48);
+										$blue = rand($r58, $r68);
+									}
+								}
+								
+								if ($_REQUEST['textcolour'] == '1') {
+									$red = rand($r19, $r29);
+									$green = rand($r39, $r49);
+									$blue = rand($r59, $r69);	
+								}
+									
+								while ($bmvar <= $bmy) {
+								
+									$bmcolvar = 0;
+								
+									while ($bmcolvar <= $bmx) {
+									
+										if ($drawbits[$bmvar][$bmcolvar] == 1) {
+											$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][1] = $red;
+											$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][2] = $green;
+											$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][3] = $blue;
+										
+										}
+									
+									
+										$bmcolvar++;
+									}				
+									$bmvar++;				
+								}
+								
+								$bmsx = $bmsx + $bmx + 1;
+								$textvar++;
+							}
+							$bmsy = rand(1,220);
+							$bmsx = rand(1,140);
+							$rtextvar++;
+						}
+
+					}
+					
+					else {
+					
+						$textvar = 0;
+						
+						while ($textvar < $textl) {
+						
+							$character = substr($_REQUEST['characters'], $textvar, 1);
+							
+							switch ($character) {
+								case "A":
+									$drawbits = $abits;
+									break;
+								case "B":
+									$drawbits = $bbits;
+									break;
+								case "C":
+									$drawbits = $cbits;
+									break;
+								case "D":
+									$drawbits = $dbits;
+									break;
+								case "E":
+									$drawbits = $ebits;
+									break;
+								case "F":
+									$drawbits = $fbits;
+									break;
+								case "G":
+									$drawbits = $gbits;
+									break;
+								case "H":
+									$drawbits = $hbits;
+									break;
+								case "I":
+									$drawbits = $ibits;
+									break;
+								case "J":
+									$drawbits = $jbits;
+									break;
+								case "K":
+									$drawbits = $kbits;
+									break;
+								case "L":
+									$drawbits = $lbits;
+									break;
+								case "M":
+									$drawbits = $mbits;
+									break;
+								case "N":
+									$drawbits = $nbits;
+									break;
+								case "O":
+									$drawbits = $obits;
+									break;
+								case "P":
+									$drawbits = $pbits;
+									break;
+								case "Q":
+									$drawbits = $qbits;
+									break;
+								case "R":
+									$drawbits = $rbits;
+									break;
+								case "S":
+									$drawbits = $sbits;
+									break;
+								case "T":
+									$drawbits = $tbits;
+									break;
+								case "U":
+									$drawbits = $ubits;
+									break;
+								case "V":
+									$drawbits = $vbits;
+									break;
+								case "W":
+									$drawbits = $wbits;
+									break;
+								case "X":
+									$drawbits = $xbits;
+									break;
+								case "Y":
+									$drawbits = $ybits;
+									break;
+								case "Z":
+									$drawbits = $zbits;
+									break;
+								case " ":
+									$drawbits = $spacebits;
+									break;
+	
+							}
+									  
+							$bmvar = 0;
+							$bmy = count($drawbits);
+							$bmx = count($drawbits[0]);
+								
+							if ($_REQUEST['text'] == 'one') {
+								$red = rand($r11, $r21);
+								$green = rand($r31, $r41);
+								$blue = rand($r51, $r61);	
+							}
+							else {
+								$num = rand(1, 8);
+								if ($num == 1) {
+									$red = rand($r11, $r21);
+									$green = rand($r31, $r41);
+									$blue = rand($r51, $r61);
+								}
+								else if ($num == 2) {
+									$red = rand($r12, $r22);
+									$green = rand($r32, $r42);
+									$blue = rand($r52, $r62);
+								}
+								else if ($num == 3) {
+									$red = rand($r13, $r23);
+									$green = rand($r33, $r43);
+									$blue = rand($r53, $r63);
+								}
+								else if ($num == 4) {
+									$red = rand($r14, $r24);
+									$green = rand($r34, $r44);
+									$blue = rand($r54, $r64);
+								}
+								else if ($num == 5) {
+									$red = rand($r15, $r25);
+									$green = rand($r35, $r45);
+									$blue = rand($r55, $r65);
+								}
+								else if ($num == 6) {
+									$red = rand($r16, $r26);
+									$green = rand($r36, $r46);
+									$blue = rand($r56, $r66);
+								}
+								else if ($num == 7) {
+									$red = rand($r17, $r27);
+									$green = rand($r37, $r47);
+									$blue = rand($r57, $r67);
+								}
+								else {
+									$red = rand($r18, $r28);
+									$green = rand($r38, $r48);
+									$blue = rand($r58, $r68);
+								}
+							}
+							
+							if ($_REQUEST['textcolour'] == '1') {
+								$red = rand($r19, $r29);
+								$green = rand($r39, $r49);
+								$blue = rand($r59, $r69);	
+							}
+								
+							while ($bmvar <= $bmy) {
+							
+								$bmcolvar = 0;
+							
+								while ($bmcolvar <= $bmx) {
+								
+									if ($drawbits[$bmvar][$bmcolvar] == 1) {
+										$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][1] = $red;
+										$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][2] = $green;
+										$grid[$bmsy+$bmvar][$bmsx+$bmcolvar][3] = $blue;
+									
+									}
+								
+								
+									$bmcolvar++;
+								}				
+								$bmvar++;				
+							}
+							
+							$bmsx = $bmsx + $bmx + 1;
+							$textvar++;
+						}
+					}
 				}
 					
 				// Draw a pixel grid
