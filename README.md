@@ -1,2 +1,2 @@
 # DalaGrid
-Software that makes grids.
+Software that makes grids, written in PHP, XHTML, and CSS.
