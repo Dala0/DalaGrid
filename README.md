@@ -11,3 +11,10 @@ Features
 * Large grid display.
 * Two hundred and fifty six by two hundred and fifty six pixel grid display.
 * Five hundred and twelve by five hundred and twelve pixel grid display.
+* Auto refresh function with adjustable rate.
+* Vertical line drawing.
+* Horizontal line drawing.
+* Cross drawing.
+* User selectable render types, including squares, circles, eight types of triangles, three types of random triangle modes, and two random modes.
+* User selectable background colour.
+* Text drawing with optional, isolated ninth colour group.
