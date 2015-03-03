@@ -18,3 +18,18 @@ Features
 * User selectable render types, including squares, circles, eight types of triangles, three types of random triangle modes, and two random modes.
 * User selectable background colour.
 * Text drawing with optional, isolated ninth colour group.
+
+
+Minimum System Requirements
+---------------------------
+
+Server
+------
+
+Web Server
+PHP 5 or later
+
+Client
+------
+
+XHTML, CSS, and JavaScript compliant Web browser
